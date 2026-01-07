@@ -1,0 +1,27 @@
+#    application.properties
+#    spring.application.name=online-store
+#    app-new-name=online-offer-store
+#    stripe.apiUrl=https://stripe.api.com
+#    stripe.enabled=true
+#    stripe.timeout=1000
+#    stripe.supported-currencies=USD,EUR,GBP
+
+spring:
+  application:
+    name: online-store
+  datasource:
+    url: jdbc:mysql://localhost:3306/online-store?createDatabaseIfNotExist=true
+    username: root
+    password: Sagar@123
+stripe:
+  apiUrl: https://stripe.api.com
+  enabled: true
+  timeout: 1000
+  supported-currencies: USD,EUR,GBP
+payment-gateway: stripe
+mail:
+  host: https://smtp.gmail.com
+  port: 5761
+
+
+
