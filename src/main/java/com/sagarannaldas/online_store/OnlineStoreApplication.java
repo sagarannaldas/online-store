@@ -1,9 +1,12 @@
 package com.sagarannaldas.online_store;
 
 import com.sagarannaldas.online_store.entities.Address;
+import com.sagarannaldas.online_store.entities.Profile;
 import com.sagarannaldas.online_store.entities.Tag;
 import com.sagarannaldas.online_store.entities.User;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.Date;
 
 @SpringBootApplication
 public class OnlineStoreApplication {
@@ -26,8 +29,15 @@ public class OnlineStoreApplication {
 
 //        user.addAddress(address);
 
+//        user.addTag("tag1");
 
-        user.addTag("tag1");
+        var profile = Profile.builder()
+                .bio("bio")
+                .build();
+        user.setProfile(profile);
+        profile.setUser(user);
+
+        user.setProfile(profile);
         System.out.println(user);
     }
 
