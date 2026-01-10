@@ -1,6 +1,7 @@
 package com.sagarannaldas.online_store;
 
 import com.sagarannaldas.online_store.entities.Address;
+import com.sagarannaldas.online_store.entities.Tag;
 import com.sagarannaldas.online_store.entities.User;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -15,15 +16,18 @@ public class OnlineStoreApplication {
                 .password("password")
                 .build();
 
-        var address = Address.builder()
-                .id(1L)
-                .street("street")
-                .city("city")
-                .zip("zip")
-                .state("state")
-                .build();
+//        var address = Address.builder()
+//                .id(1L)
+//                .street("street")
+//                .city("city")
+//                .zip("zip")
+//                .state("state")
+//                .build();
 
-        user.addAddress(address);
+//        user.addAddress(address);
+
+
+        user.addTag("tag1");
         System.out.println(user);
     }
 
