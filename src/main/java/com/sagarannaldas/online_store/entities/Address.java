@@ -3,7 +3,11 @@ package com.sagarannaldas.online_store.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
+@ToString
 @Setter
 @Entity
 @Table(name = "addresses")
@@ -24,4 +28,9 @@ public class Address {
 
     @Column(name = "state")
     private String state;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @ToString.Exclude
+    private User user;
 }
