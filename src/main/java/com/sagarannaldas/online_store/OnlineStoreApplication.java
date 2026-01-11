@@ -11,8 +11,9 @@ public class OnlineStoreApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(OnlineStoreApplication.class, args);
         var service = context.getBean(UserService.class);
-        service.showEntityStates();
-        service.showRelatedEntityStates();
+//        service.showEntityStates();
+//        service.showRelatedEntityStates();
+        service.fetchAddress(1L);
 
         /*var repository = context.getBean(UserRepository.class);
 

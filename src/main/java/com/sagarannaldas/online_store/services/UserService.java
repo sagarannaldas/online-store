@@ -1,6 +1,7 @@
 package com.sagarannaldas.online_store.services;
 
 import com.sagarannaldas.online_store.entities.User;
+import com.sagarannaldas.online_store.repositories.AddressRepository;
 import com.sagarannaldas.online_store.repositories.ProfileRepository;
 import com.sagarannaldas.online_store.repositories.UserRepository;
 import jakarta.persistence.EntityManager;
@@ -14,6 +15,7 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final ProfileRepository profileRepository;
+    private final AddressRepository addressRepository;
     private final EntityManager entityManager;
 
     @Transactional
@@ -42,5 +44,10 @@ public class UserService {
     public void showRelatedEntityStates() {
         var profile = profileRepository.findById(1L).orElseThrow();
         System.out.println(profile.getUser().getEmail());
+    }
+
+    public void fetchAddress(Long userId) {
+        var address = addressRepository.findById(1L).orElseThrow();
+        System.out.println(address);
     }
 }
