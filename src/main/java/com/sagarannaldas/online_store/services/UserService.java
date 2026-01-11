@@ -108,5 +108,10 @@ public class UserService {
         userRepository.save(user);
     }
 
+    @Transactional
+    public void removeProductFromWishList() {
+        productRepository.deleteById(5L);
+    }
+
 
 }
