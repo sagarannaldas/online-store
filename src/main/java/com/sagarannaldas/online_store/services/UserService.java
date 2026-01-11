@@ -1,6 +1,7 @@
 package com.sagarannaldas.online_store.services;
 
 import com.sagarannaldas.online_store.entities.User;
+import com.sagarannaldas.online_store.repositories.ProfileRepository;
 import com.sagarannaldas.online_store.repositories.UserRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final ProfileRepository profileRepository;
     private final EntityManager entityManager;
 
     @Transactional
@@ -34,5 +36,11 @@ public class UserService {
         } else {
             System.out.println("Transient/ Detached");
         }
+    }
+
+    @Transactional
+    public void showRelatedEntityStates() {
+        var profile = profileRepository.findById(1L).orElseThrow();
+        System.out.println(profile.getUser().getEmail());
     }
 }

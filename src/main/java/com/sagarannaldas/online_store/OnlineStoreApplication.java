@@ -12,6 +12,7 @@ public class OnlineStoreApplication {
         ApplicationContext context = SpringApplication.run(OnlineStoreApplication.class, args);
         var service = context.getBean(UserService.class);
         service.showEntityStates();
+        service.showRelatedEntityStates();
 
         /*var repository = context.getBean(UserRepository.class);
 
