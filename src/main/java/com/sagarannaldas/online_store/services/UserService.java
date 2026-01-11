@@ -1,14 +1,16 @@
 package com.sagarannaldas.online_store.services;
 
 import com.sagarannaldas.online_store.entities.Address;
+import com.sagarannaldas.online_store.entities.Category;
+import com.sagarannaldas.online_store.entities.Product;
 import com.sagarannaldas.online_store.entities.User;
-import com.sagarannaldas.online_store.repositories.AddressRepository;
-import com.sagarannaldas.online_store.repositories.ProfileRepository;
-import com.sagarannaldas.online_store.repositories.UserRepository;
+import com.sagarannaldas.online_store.repositories.*;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
 
 @AllArgsConstructor
 @Service
@@ -17,7 +19,9 @@ public class UserService {
     private final UserRepository userRepository;
     private final ProfileRepository profileRepository;
     private final AddressRepository addressRepository;
+    private final CategoryRepository categoryRepository;
     private final EntityManager entityManager;
+    private final ProductRepository productRepository;
 
     @Transactional
     public void showEntityStates() {
@@ -81,4 +85,21 @@ public class UserService {
         user.removeAddress(address);
         userRepository.save(user);
     }
+
+    @Transactional
+    public void manageProduct() {
+
+        var category = new Category("Category 1");
+
+        var product = Product.builder()
+                .name("product 1")
+                .price(BigDecimal.valueOf(10.99))
+                .description("new product 1")
+                .category(category)
+                .build();
+
+        productRepository.save(product);
+    }
+
+
 }

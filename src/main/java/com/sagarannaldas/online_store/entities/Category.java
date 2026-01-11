@@ -8,11 +8,9 @@ import java.util.Set;
 
 @Getter
 @Setter
-@Builder
 @Entity
-@Table(name = "categories")
 @NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "categories")
 public class Category {
 
     @Id
@@ -24,6 +22,9 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category")
-    @Builder.Default
     private Set<Product> products = new HashSet<>();
+
+    public Category(String name) {
+        this.name = name;
+    }
 }
