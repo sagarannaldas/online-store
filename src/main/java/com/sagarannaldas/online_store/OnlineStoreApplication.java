@@ -17,7 +17,8 @@ public class OnlineStoreApplication {
 //        service.persistRelated();
 //        service.deleteRelated();
 //        service.childDeleteRelated();
-        service.manageProduct();
+//        service.manageProduct();
+        service.wishlistProducts();
         /*var repository = context.getBean(UserRepository.class);
 
         var user = User.builder()

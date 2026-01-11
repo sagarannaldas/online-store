@@ -88,17 +88,24 @@ public class UserService {
 
     @Transactional
     public void manageProduct() {
-
-        var category = new Category("Category 1");
+        var category = categoryRepository.findById((byte) 1).orElseThrow();
 
         var product = Product.builder()
-                .name("product 1")
-                .price(BigDecimal.valueOf(10.99))
-                .description("new product 1")
+                .name("product 2")
+                .price(BigDecimal.valueOf(12))
+                .description("new product 2")
                 .category(category)
                 .build();
 
         productRepository.save(product);
+    }
+
+    @Transactional
+    public void wishlistProducts() {
+        var user = userRepository.findById(2L).orElseThrow();
+        var products = productRepository.findAll();
+        products.forEach(user::addFavouriteProduct);
+        userRepository.save(user);
     }
 
 

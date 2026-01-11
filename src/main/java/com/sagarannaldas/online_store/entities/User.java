@@ -94,4 +94,8 @@ public class User {
         addresses.remove(address);
         address.setUser(null);
     }
+
+    public void addFavouriteProduct(Product product) {
+        wishlist.add(product);
+    }
 }
