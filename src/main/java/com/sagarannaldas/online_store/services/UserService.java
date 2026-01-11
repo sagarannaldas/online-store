@@ -1,5 +1,6 @@
 package com.sagarannaldas.online_store.services;
 
+import com.sagarannaldas.online_store.entities.Address;
 import com.sagarannaldas.online_store.entities.User;
 import com.sagarannaldas.online_store.repositories.AddressRepository;
 import com.sagarannaldas.online_store.repositories.ProfileRepository;
@@ -49,5 +50,23 @@ public class UserService {
     public void fetchAddress(Long userId) {
         var address = addressRepository.findById(1L).orElseThrow();
         System.out.println(address);
+    }
+
+    public void persistRelated() {
+        var user = User.builder()
+                .name("mac")
+                .email("mac@gmail.com")
+                .password("password")
+                .build();
+
+        var address = Address.builder()
+                .city("hyd")
+                .state("hyd")
+                .street("kphb")
+                .zip("50003")
+                .build();
+
+        user.addAddress(address);
+        userRepository.save(user);
     }
 }
