@@ -113,5 +113,8 @@ public class UserService {
         productRepository.deleteById(5L);
     }
 
-
+    @Transactional
+    public void updateProductPrice() {
+        productRepository.updatePriceByCategoryId(BigDecimal.valueOf(12), (byte) 1);
+    }
 }
