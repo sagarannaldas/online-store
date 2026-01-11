@@ -47,6 +47,23 @@ public class User {
     @OneToOne(mappedBy = "user")
     private Profile profile;
 
+    @ManyToMany
+    @JoinTable(
+            name = "wishlist",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    @Builder.Default
+    private Set<Product> wishlist = new HashSet<>();
+
+    public void addProduct(Product product) {
+        this.wishlist.add(product);
+    }
+
+    public void removeProduct(Product product) {
+        this.wishlist.remove(product);
+    }
+
     public void addProfile(Profile profile) {
         profile = profile;
         profile.setUser(this);

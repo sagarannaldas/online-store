@@ -3,9 +3,7 @@ package com.sagarannaldas.online_store.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -22,6 +20,7 @@ public class Tag {
 
     @Column(name = "name")
     private String name;
+
     @ManyToMany(mappedBy = "tags")
     @ToString.Exclude
     private Set<User> users = new HashSet<>();
