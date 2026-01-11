@@ -31,7 +31,7 @@ public class User {
     @Column(nullable = false, name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     @Builder.Default
     private List<Address> addresses = new ArrayList<>();
 

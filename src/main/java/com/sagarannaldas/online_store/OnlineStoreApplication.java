@@ -15,7 +15,8 @@ public class OnlineStoreApplication {
 //        service.showRelatedEntityStates();
 //        service.fetchAddress(1L);
 //        service.persistRelated();
-        service.deleteRelated();
+//        service.deleteRelated();
+        service.childDeleteRelated();
 
         /*var repository = context.getBean(UserRepository.class);
 
