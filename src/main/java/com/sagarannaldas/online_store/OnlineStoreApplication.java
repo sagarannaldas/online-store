@@ -13,8 +13,9 @@ public class OnlineStoreApplication {
         var service = context.getBean(UserService.class);
 //        service.showEntityStates();
 //        service.showRelatedEntityStates();
-        service.fetchAddress(1L);
-        service.persistRelated();
+//        service.fetchAddress(1L);
+//        service.persistRelated();
+        service.deleteRelated();
 
         /*var repository = context.getBean(UserRepository.class);
 
