@@ -119,6 +119,11 @@ public class UserService {
     }
 
     @Transactional
+    public void fetchProducts() {
+        var products = productRepository.findProducts(BigDecimal.valueOf(1),BigDecimal.valueOf(12));
+        System.out.println(products);
+    }
+    @Transactional
     public void fetchUser() {
         var users = userRepository.findAllWithAddress();
         users.forEach(user -> {

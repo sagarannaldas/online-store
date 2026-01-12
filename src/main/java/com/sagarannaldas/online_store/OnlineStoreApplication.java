@@ -20,7 +20,8 @@ public class OnlineStoreApplication {
 //        service.manageProduct();
 //        service.wishlistProducts();
 //        service.removeProductFromWishList();
-        service.updateProductPrice();
+//        service.updateProductPrice();
+        service.fetchProducts();
         /*var repository = context.getBean(UserRepository.class);
 
         var user = User.builder()
