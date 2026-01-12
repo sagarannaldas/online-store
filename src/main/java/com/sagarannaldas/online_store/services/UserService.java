@@ -117,4 +117,10 @@ public class UserService {
     public void updateProductPrice() {
         productRepository.updatePriceByCategoryId(BigDecimal.valueOf(12), (byte) 1);
     }
+
+    @Transactional
+    public void fetchUser() {
+        var user = userRepository.findByEmail("john@gmail.com").orElseThrow();
+        System.out.println(user);
+    }
 }
