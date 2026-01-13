@@ -32,7 +32,8 @@ public class OnlineStoreApplication {
         repository.save(user);*/
 //        service.showEntityStates();
 //        service.addProfile();
-        service.printLoyaltyProfiles();
+//        service.printLoyaltyProfiles();
+        service.fetchProductsByCriteria();
     }
 
 }

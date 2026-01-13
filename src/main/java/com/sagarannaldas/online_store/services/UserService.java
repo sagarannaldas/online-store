@@ -138,6 +138,12 @@ public class UserService {
     }
 
     @Transactional
+    public void fetchProductsByCriteria() {
+        var products = productRepository.findProductsByCriteria("prod", BigDecimal.valueOf(1), null);
+        System.out.println(products);
+    }
+
+    @Transactional
     public void fetchUser() {
         var users = userRepository.findAllWithAddress();
         users.forEach(user -> {
