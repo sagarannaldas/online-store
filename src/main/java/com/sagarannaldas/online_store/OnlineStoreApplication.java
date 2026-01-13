@@ -34,7 +34,9 @@ public class OnlineStoreApplication {
 //        service.addProfile();
 //        service.printLoyaltyProfiles();
 //        service.fetchProductsByCriteria();
-        service.fetchProductsBySpecifications("prod", null, null);
+//        service.fetchProductsBySpecifications("prod", null, null);
+//        service.fetchSortedProducts();
+        service.fetchPaginatedProducts(0,10);
     }
 
 }
