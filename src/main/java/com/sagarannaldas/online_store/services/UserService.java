@@ -1,9 +1,6 @@
 package com.sagarannaldas.online_store.services;
 
-import com.sagarannaldas.online_store.entities.Address;
-import com.sagarannaldas.online_store.entities.Category;
-import com.sagarannaldas.online_store.entities.Product;
-import com.sagarannaldas.online_store.entities.User;
+import com.sagarannaldas.online_store.entities.*;
 import com.sagarannaldas.online_store.repositories.*;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
@@ -26,8 +23,8 @@ public class UserService {
     @Transactional
     public void showEntityStates() {
         var user = User.builder()
-                .name("John")
-                .email("john@gmail.com")
+                .name("kphb")
+                .email("kphb@gmail.com")
                 .password("password")
                 .build();
 
@@ -120,9 +117,10 @@ public class UserService {
 
     @Transactional
     public void fetchProducts() {
-        var products = productRepository.findProducts(BigDecimal.valueOf(1),BigDecimal.valueOf(12));
+        var products = productRepository.findProducts(BigDecimal.valueOf(1), BigDecimal.valueOf(12));
         System.out.println(products);
     }
+
     @Transactional
     public void fetchUser() {
         var users = userRepository.findAllWithAddress();
@@ -130,5 +128,11 @@ public class UserService {
             System.out.println(user);
             user.getAddresses().forEach(System.out::println);
         });
+    }
+
+    @Transactional
+    public void printLoyaltyProfiles() {
+        var users = userRepository.findLoyalUsers(2);
+        users.forEach(p -> System.out.println(p.getId() + " " + p.getEmail()));
     }
 }

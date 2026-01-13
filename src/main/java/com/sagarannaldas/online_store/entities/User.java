@@ -64,7 +64,7 @@ public class User {
     }
 
     public void addProfile(Profile profile) {
-        profile = profile;
+        this.profile = profile;
         profile.setUser(this);
     }
 

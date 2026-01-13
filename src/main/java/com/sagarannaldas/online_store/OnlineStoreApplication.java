@@ -21,7 +21,7 @@ public class OnlineStoreApplication {
 //        service.wishlistProducts();
 //        service.removeProductFromWishList();
 //        service.updateProductPrice();
-        service.fetchProducts();
+//        service.fetchProducts();
         /*var repository = context.getBean(UserRepository.class);
 
         var user = User.builder()
@@ -30,6 +30,9 @@ public class OnlineStoreApplication {
                 .password("password")
                 .build();
         repository.save(user);*/
+//        service.showEntityStates();
+//        service.addProfile();
+        service.printLoyaltyProfiles();
     }
 
 }
