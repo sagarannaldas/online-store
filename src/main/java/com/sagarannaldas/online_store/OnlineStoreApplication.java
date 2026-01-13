@@ -33,7 +33,8 @@ public class OnlineStoreApplication {
 //        service.showEntityStates();
 //        service.addProfile();
 //        service.printLoyaltyProfiles();
-        service.fetchProductsByCriteria();
+//        service.fetchProductsByCriteria();
+        service.fetchProductsBySpecifications("prod", null, null);
     }
 
 }
